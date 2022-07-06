@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Note App</title>
+</head>
+<body>
+    <div id="notes">
+        <h2>Notes App</h2>
+        <div class="inputs">
+            <input type="text" id="title" placeholder="Enter Note Title">
+            <input type="text" name="" id="body" placeholder="Enter Note Body">
+            <select id="colors">
+                <option>Select Color</option>
+                <option value="#000000">White</option>
+                <option value="#FFB2B2">Red</option>
+                <option value="#FFFFBF">Yellow</option>
+                <option value="#B2FFB2">Green</option>
+                <option value="#3399FF">Blue</option>
+            </select>
+            <button type="button" class="add">Add Note</button>
+        </div>
+        <div class="notesDiv">
+            <div class="note">
+                <div class="text">
+                    <b>This is the Title</b>
+                    <p>This is the Text</p>
+                </div>
+                <button class="add">Edit</button>
+                <button class="delete">Delete</button>
+            </div>
+        </div>
+    </div>    
+</body>
+</html>
