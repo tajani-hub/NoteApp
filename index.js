@@ -1,43 +1,43 @@
 let notes = [
- {
-    id: new Date(),
-    title: 'Sample Note',
-    body: 'Sample note description',
-    bgColor: '#EEE'
- }   
+    {
+        id: new Date(),
+        title: 'Sample Note',
+        body: 'Sample note description',
+        bgColor: '#EEE'
+    }   
 ]
 
 const createElement = (tag, classes = []) => {
-  const element = document.createElement(tag);  
-  classes.forEach(c1 => {
-    element.classList.add(c1);
-  })
-  return element;
+    const element = document.createElement(tag);  
+    classes.forEach(c1 => {
+        element.classList.add(c1);
+    })
+    return element;
 }
 
 const createNoteView = (note) => {
-  const noteDiv = createElement('div', ['note']);
-  noteDiv.id = note.id;
-  const textDiv = createElement('div', ['text']);
-  textDiv.style.background = note.bgColor;  
-  const titleP = createElement('b', ['title']);
-  titleP.innerHTML = note.title;
-  const bodyP = createElement('p', ['body']);
-  bodyP.innerHTML = note.body;
-  const editButton = createElement('button', ['edit']);
-  editButton.innerHTML = 'Edit';
-  const deleteButton = createElement('button', ['delete']);
-  deleteButton.innerHTML = 'Delete';
+    const noteDiv = createElement('div', ['note']);
+    noteDiv.id = note.id;
+    const textDiv = createElement('div', ['text']);
+    textDiv.style.background = note.bgColor;  
+    const titleP = createElement('b', ['title']);
+    titleP.innerHTML = note.title;
+    const bodyP = createElement('p', ['body']);
+    bodyP.innerHTML = note.body;
+    const editButton = createElement('button', ['edit']);
+    editButton.innerHTML = 'Edit';
+    const deleteButton = createElement('button', ['delete']);
+    deleteButton.innerHTML = 'Delete';
 
-  textDiv.append(titleP)
-  textDiv.append(bodyP)
-  noteDiv.append(textDiv)
-  noteDiv.append(editButton)
-  noteDiv.append(deleteButton)
-  editButton.onclick = () => editNote(noteDiv);
-  deleteButton.onclick = () => deleteNote(noteDiv);
-  return noteDiv;
-}
+    textDiv.append(titleP)
+    textDiv.append(bodyP)
+    noteDiv.append(textDiv)
+    noteDiv.append(editButton)
+    noteDiv.append(deleteButton)
+    editButton.onclick = () => editNote(noteDiv);
+    deleteButton.onclick = () => deleteNote(noteDiv);
+    return noteDiv;
+    }
 
 const cancelEdit = (noteDiv) => {
     const titleP = noteDiv.querySelector('b.title');
